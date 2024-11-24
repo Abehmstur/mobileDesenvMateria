@@ -19,12 +19,15 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import br.ufrn.imd.imdmarket.R
+import br.ufrn.imd.imdmarket.navegacao.Rotas
 
 @Composable
-fun TelaMenu() {
+fun TelaMenu(navController: NavController) {
     Column {
         Row(
             Modifier
@@ -35,7 +38,7 @@ fun TelaMenu() {
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
-                text = "IMDMARKET",
+                text = stringResource(id = R.string.app_name),
                 style = MaterialTheme.typography.titleLarge,
                 color = colorResource(id = R.color.white),
             )
@@ -59,10 +62,13 @@ fun TelaMenu() {
                     horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Button(
-                    onClick = {},
+                    onClick = {
+                        navController.navigate(Rotas.TCADASTRO)
+                    },
                     colors = ButtonDefaults.buttonColors(
-                        colorResource(id = R.color.azul)
+                        colorResource(id = R.color.azul
                     ),
+                ),
                     modifier = Modifier
                         .size(110.dp, 60.dp)
                         .background(
@@ -98,7 +104,9 @@ fun TelaMenu() {
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Button(
-                    onClick = {},
+                    onClick = {
+                        navController.navigate(Rotas.TALTERACAO)
+                    },
                     colors = ButtonDefaults.buttonColors(
                         colorResource(id = R.color.azul)
                     ),
@@ -114,7 +122,9 @@ fun TelaMenu() {
                     )
                 }
                 Button(
-                    onClick = {},
+                    onClick = {
+                        navController.navigate(Rotas.TEXCLUSAO)
+                    },
                     colors = ButtonDefaults.buttonColors(
                         colorResource(id = R.color.azul)
                     ),
@@ -136,7 +146,7 @@ fun TelaMenu() {
             ) {
                 Image(
                     painter = painterResource(id = R.drawable.ic_launcher_background),
-                    contentDescription = "",
+                    contentDescription = "Imagem ilustiva da loaja.",
                     modifier = Modifier
                         .size(100.dp)
                 )
@@ -144,11 +154,3 @@ fun TelaMenu() {
         }
     }
 }
-
-//@Preview(showBackground = true)
-//@Composable
-//fun TelaMenuPreview() {
-//    IMDMarketTheme {
-//        TelaMenu()
-//    }
-//}
