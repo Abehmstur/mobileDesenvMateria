@@ -42,7 +42,7 @@ fun TelaExclusao(navController: NavController){
     val msg = LocalContext.current
 
     fun verificaNull(){
-        if(codigoProduto == ""){
+        if(codigoProduto.isEmpty()){
             Toast.makeText(msg, "O campo é obrigatório!", Toast.LENGTH_SHORT).show()
         }
     }

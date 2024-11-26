@@ -44,7 +44,7 @@ fun TelaCadastro(
     val msg = LocalContext.current
 
     fun verificaNull(){
-        if(codigoProduto == "" || nomeProduto == "" || descricaoProduto == "" || estoqueProduto == ""){
+        if(codigoProduto.isEmpty() || nomeProduto.isEmpty() || descricaoProduto.isEmpty() || estoqueProduto.isEmpty()){
             Toast.makeText(msg, "Todos os itens são de preenchimento obrigatório!", Toast.LENGTH_SHORT).show()
         }
     }
