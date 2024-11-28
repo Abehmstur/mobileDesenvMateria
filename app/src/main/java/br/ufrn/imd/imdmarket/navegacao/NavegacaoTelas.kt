@@ -10,6 +10,7 @@ import androidx.navigation.compose.composable
 import br.ufrn.imd.imdmarket.telas.TelaAlteracao
 import br.ufrn.imd.imdmarket.telas.TelaCadastro
 import br.ufrn.imd.imdmarket.telas.TelaExclusao
+import br.ufrn.imd.imdmarket.telas.TelaListagem
 import br.ufrn.imd.imdmarket.telas.TelaMenu
 
 object Rotas {
@@ -41,6 +42,9 @@ fun NavegacaoTelas(modifier: Modifier = Modifier, navController: NavHostControll
         }
         composable(Rotas.TEXCLUSAO){
             TelaExclusao(navController = navController)
+        }
+        composable(Rotas.TLISTAGEM){
+            TelaListagem(navController = navController)
         }
     }
 

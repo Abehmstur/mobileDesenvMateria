@@ -81,7 +81,9 @@ fun TelaMenu(navController: NavController) {
                     )
                 }
                 Button(
-                    onClick = {},
+                    onClick = {
+                        navController.navigate(Rotas.TLISTAGEM)
+                    },
                     colors = ButtonDefaults.buttonColors(
                         colorResource(id = R.color.azul)
                     ),
